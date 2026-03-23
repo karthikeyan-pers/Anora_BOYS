@@ -1,17 +1,13 @@
 #include <stdio.h>
+#include "functions.h"
 
-float add(float a, float b);
-float sub(float a, float b);
-float mul(float a, float b);
-float div(float a, float b);
-float square_root(float a);
 
 int main() {
     int ch = 1;
-
+    float a, b;
     do {
         int sw;
-        float a, b;
+        
 
         printf("\nEnter:\n1.ADDITION\n2.SUBTRACTION\n3.MULTIPLICATION\n4.DIVISION\n5.SQUARE ROOT\n6.EXIT\nEnter your choice: ");
         scanf("%d", &sw);
@@ -45,12 +41,12 @@ int main() {
 
             case 4:
                 if (b != 0)
-                    printf("Division = %f\n", divi(a, b));
+                    printf("Division = %f\n", div(a, b));
                 else
                     printf("Error: Division by zero!\n");
                 break;
             case 5:
-                 (b<0)?printf("No square root for negative number"):square_root(a);
+                 (a<0)?printf("No square root for negative number"):printf("square root of %f : %f",a,square_root(a));
                  break;
             default:
                 printf("Invalid choice!\n");
