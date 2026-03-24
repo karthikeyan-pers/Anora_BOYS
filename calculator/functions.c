@@ -33,3 +33,14 @@ float square_root(float a) {
     }
     return xo;
 }
+
+unsigned long long exponent(unsigned long long a,unsigned long long n){
+   unsigned long long res=1;
+    while(n>0){
+       if(n&1) res*=a;
+       a*=a;
+       n>>=1;
+    }
+    return res;
+}
+
